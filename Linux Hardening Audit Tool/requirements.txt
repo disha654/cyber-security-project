@@ -1,0 +1,2 @@
+# No external dependencies required.
+# Uses Python 3.x Standard Library: os, subprocess, json, platform, stat, re, datetime.

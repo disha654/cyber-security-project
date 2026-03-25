@@ -1,0 +1,35 @@
+2026-03-25 14:31:55,102 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-25 14:31:55,102 - [33mPress CTRL+C to quit[0m
+2026-03-25 14:31:55,104 -  * Restarting with stat
+2026-03-25 14:31:55,390 -  * Debugger is active!
+2026-03-25 14:31:55,395 -  * Debugger PIN: 107-183-372
+2026-03-25 14:33:30,756 - 127.0.0.1 - - [25/Mar/2026 14:33:30] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2026-03-25 14:33:30,953 - 127.0.0.1 - - [25/Mar/2026 14:33:30] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2026-03-25 14:33:30,967 - 127.0.0.1 - - [25/Mar/2026 14:33:30] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2026-03-25 14:33:31,013 - 127.0.0.1 - - [25/Mar/2026 14:33:31] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=YjJ6QGMpp7PeLKSEcTTH HTTP/1.1" 200 -
+2026-03-25 14:33:31,027 - 127.0.0.1 - - [25/Mar/2026 14:33:31] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2026-03-25 14:38:00,676 -  * Detected change in 'D:\\Disha\\Cyber Security Projects\\p1\\SQL Injection Playground with Detection Engine\\app.py', reloading
+2026-03-25 14:38:00,737 -  * Restarting with stat
+2026-03-25 14:38:00,987 -  * Debugger is active!
+2026-03-25 14:38:00,989 -  * Debugger PIN: 107-183-372
+2026-03-25 15:00:13,240 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-25 15:00:13,240 - [33mPress CTRL+C to quit[0m
+2026-03-25 15:00:13,241 -  * Restarting with stat
+2026-03-25 15:00:13,457 -  * Debugger is active!
+2026-03-25 15:00:13,459 -  * Debugger PIN: 107-183-372
+2026-03-25 15:01:09,856 - 127.0.0.1 - - [25/Mar/2026 15:01:09] "GET / HTTP/1.1" 200 -
+2026-03-25 15:01:09,949 - 127.0.0.1 - - [25/Mar/2026 15:01:09] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-25 15:04:07,788 - 127.0.0.1 - - [25/Mar/2026 15:04:07] "GET / HTTP/1.1" 200 -
+2026-03-25 15:05:31,522 -  * Detected change in 'D:\\Disha\\Cyber Security Projects\\p1\\SQL Injection Playground with Detection Engine\\app.py', reloading
+2026-03-25 15:05:31,552 -  * Restarting with stat
+2026-03-25 15:05:31,781 -  * Debugger is active!
+2026-03-25 15:05:31,784 -  * Debugger PIN: 107-183-372
+2026-03-25 15:06:02,681 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-25 15:06:02,681 - [33mPress CTRL+C to quit[0m
+2026-03-25 15:06:02,681 -  * Restarting with stat
+2026-03-25 15:06:02,907 -  * Debugger is active!
+2026-03-25 15:06:02,910 -  * Debugger PIN: 107-183-372
+2026-03-25 15:06:12,648 - 127.0.0.1 - - [25/Mar/2026 15:06:12] "GET / HTTP/1.1" 200 -

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Shield - Analytics Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <div class="logo">
+        <span class="logo-icon">🛡️</span>
+        <h2>Privacy Shield</h2>
+      </div>
+      <nav>
+        <ul>
+          <li class="active" data-tab="analytics">Analytics</li>
+          <li data-tab="whitelist">Whitelist</li>
+          <li data-tab="settings">Settings</li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <header class="main-header">
+        <h1>Analytics Overview</h1>
+      </header>
+
+      <section id="analytics" class="tab-content active">
+        <div class="summary-cards">
+          <div class="card">
+            <h3>Total Blocked</h3>
+            <p id="totalBlockedCount">0</p>
+          </div>
+          <div class="card">
+            <h3>Unique Domains</h3>
+            <p id="uniqueDomainsCount">0</p>
+          </div>
+        </div>
+
+        <div class="data-section">
+          <h2>Top Blocked Trackers</h2>
+          <table id="trackersTable">
+            <thead>
+              <tr>
+                <th>Domain</th>
+                <th>Requests Blocked</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Rows populated by JS -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="whitelist" class="tab-content">
+        <h2>Whitelist Management</h2>
+        <div class="add-whitelist">
+          <input type="text" id="whitelistInput" placeholder="Enter domain (e.g., example.com)">
+          <button id="addWhitelistBtn" class="btn">Add to Whitelist</button>
+        </div>
+        <ul id="whitelistItems" class="list-container">
+          <!-- Whitelist items populated by JS -->
+        </ul>
+      </section>
+
+      <section id="settings" class="tab-content">
+        <h2>Settings</h2>
+        <div class="setting-item">
+          <label>Reset All Statistics</label>
+          <button id="resetStatsBtn" class="btn danger">Reset Data</button>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+Mar 25 10:00:01 my-server sshd[1234]: Accepted password for user1 from 192.168.1.1 port 22 ssh2
+Mar 25 10:01:00 my-server sshd[1235]: Failed password for root from 192.168.1.5 port 22 ssh2
+Mar 25 10:01:01 my-server sshd[1236]: Failed password for root from 192.168.1.5 port 22 ssh2
+Mar 25 10:01:02 my-server sshd[1237]: Failed password for root from 192.168.1.5 port 22 ssh2
+Mar 25 10:01:03 my-server sshd[1238]: Failed password for root from 192.168.1.5 port 22 ssh2
+Mar 25 10:01:04 my-server sshd[1239]: Failed password for root from 192.168.1.5 port 22 ssh2
+Mar 25 10:02:00 my-server sshd[1240]: Invalid user malicous from 192.168.1.6 port 22 ssh2
+Mar 25 10:02:05 my-server sshd[1241]: Failed password for root from 192.168.1.6 port 22 ssh2

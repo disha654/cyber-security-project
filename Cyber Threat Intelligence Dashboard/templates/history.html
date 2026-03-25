@@ -1,0 +1,82 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="card">
+    <div class="header-row">
+        <h2>Lookup History</h2>
+        <div class="export-options">
+            <a href="{{ url_for('export_data', format='csv') }}" class="btn btn-secondary">Export CSV</a>
+            <a href="{{ url_for('export_data', format='json') }}" class="btn btn-secondary">Export JSON</a>
+        </div>
+    </div>
+    
+    <div class="table-responsive">
+        <table class="history-table">
+            <thead>
+                <tr>
+                    <th>Timestamp</th>
+                    <th>Target</th>
+                    <th>Type</th>
+                    <th>Risk (VT)</th>
+                    <th>Abuse Score</th>
+                    <th>Tags</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in lookups %}
+                <tr>
+                    <td>{{ item.timestamp.strftime('%Y-%m-%d %H:%M') }}</td>
+                    <td>{{ item.target }}</td>
+                    <td><span class="badge {{ item.target_type.lower() }}">{{ item.target_type }}</span></td>
+                    <td>
+                        {% set vt = item.results.get('VirusTotal', {}) %}
+                        {% if vt.malicious_count is defined %}
+                            <span class="risk-score {% if vt.malicious_count > 0 %}risk-high{% else %}risk-low{% endif %}">
+                                {{ vt.malicious_count }} / {{ vt.malicious_count + vt.harmless_count + vt.suspicious_count }}
+                            </span>
+                        {% else %}
+                            N/A
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% set abuse = item.results.get('AbuseIPDB', {}) %}
+                        {% if abuse.abuse_confidence_score is defined %}
+                            {{ abuse.abuse_confidence_score }}%
+                        {% else %}
+                            N/A
+                        {% endif %}
+                    </td>
+                    <td>
+                        <div class="tag-list" id="tags-{{ item._id }}">
+                            {% for tag in item.tags %}
+                                <span class="tag">{{ tag }}</span>
+                            {% endfor %}
+                        </div>
+                    </td>
+                    <td>
+                        <button class="btn btn-small btn-tag" onclick="promptTag('{{ item._id }}')">Add Tag</button>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    async function promptTag(id) {
+        const tag = prompt("Enter tag name:");
+        if (tag) {
+            const response = await fetch('/tag', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ lookup_id: id, tag: tag })
+            });
+            if (response.ok) {
+                location.reload();
+            }
+        }
+    }
+</script>
+{% endblock %}

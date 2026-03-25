@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="dashboard-grid">
+    <div class="card lookup-card">
+        <h2>Threat Lookup</h2>
+        <form id="lookup-form" class="lookup-form">
+            <input type="text" id="target" name="target" placeholder="Enter IP Address or Domain" required>
+            <button type="submit" id="lookup-btn">Analyze</button>
+        </form>
+        <div id="loading" class="hidden">
+            <div class="spinner"></div>
+            <p>Scanning indicators...</p>
+        </div>
+        <div id="results" class="results-container hidden">
+            <!-- Results populated by JS -->
+        </div>
+    </div>
+
+    <div class="card metrics-card">
+        <h2>Threat Metrics Overview</h2>
+        <div class="chart-container">
+            <canvas id="typeChart"></canvas>
+        </div>
+        <div class="metrics-summary">
+            <p>Total Lookups: <span id="total-lookups">0</span></p>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Embed metrics from Flask
+    window.metricsData = {{ metrics|tojson }};
+</script>
+{% endblock %}

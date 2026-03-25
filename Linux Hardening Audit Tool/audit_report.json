@@ -1,0 +1,98 @@
+{
+    "timestamp": "2026-03-25 12:57:13",
+    "os": "Windows-11-10.0.26200-SP0",
+    "compliance_score": "15.38%",
+    "results": [
+        {
+            "check": "Permission check for /etc/shadow",
+            "category": "Filesystem",
+            "status": "NOT FOUND",
+            "details": "File /etc/shadow does not exist.",
+            "recommendation": ""
+        },
+        {
+            "check": "Permission check for /etc/passwd",
+            "category": "Filesystem",
+            "status": "NOT FOUND",
+            "details": "File /etc/passwd does not exist.",
+            "recommendation": ""
+        },
+        {
+            "check": "Permission check for /etc/group",
+            "category": "Filesystem",
+            "status": "NOT FOUND",
+            "details": "File /etc/group does not exist.",
+            "recommendation": ""
+        },
+        {
+            "check": "Permission check for /etc/gshadow",
+            "category": "Filesystem",
+            "status": "NOT FOUND",
+            "details": "File /etc/gshadow does not exist.",
+            "recommendation": ""
+        },
+        {
+            "check": "SSH Config: PermitRootLogin",
+            "category": "SSH",
+            "status": "NOT FOUND",
+            "details": "SSH config not found at /etc/ssh/sshd_config",
+            "recommendation": ""
+        },
+        {
+            "check": "SSH Config: PasswordAuthentication",
+            "category": "SSH",
+            "status": "NOT FOUND",
+            "details": "SSH config not found at /etc/ssh/sshd_config",
+            "recommendation": ""
+        },
+        {
+            "check": "SSH Config: MaxAuthTries",
+            "category": "SSH",
+            "status": "NOT FOUND",
+            "details": "SSH config not found at /etc/ssh/sshd_config",
+            "recommendation": ""
+        },
+        {
+            "check": "Kernel Param: net.ipv4.ip_forward",
+            "category": "Network",
+            "status": "ERROR",
+            "details": "",
+            "recommendation": ""
+        },
+        {
+            "check": "Kernel Param: net.ipv4.conf.all.send_redirects",
+            "category": "Network",
+            "status": "ERROR",
+            "details": "",
+            "recommendation": ""
+        },
+        {
+            "check": "Kernel Param: net.ipv4.conf.all.accept_redirects",
+            "category": "Network",
+            "status": "ERROR",
+            "details": "",
+            "recommendation": ""
+        },
+        {
+            "check": "Firewall Status",
+            "category": "Network",
+            "status": "FAIL",
+            "details": "No active firewall detected (UFW/Iptables)",
+            "recommendation": "Enable UFW: sudo ufw enable"
+        },
+        {
+            "check": "Rootkit Indicators",
+            "category": "Security",
+            "status": "PASS",
+            "details": "No common rootkit paths found",
+            "recommendation": ""
+        },
+        {
+            "check": "Unused Services",
+            "category": "Services",
+            "status": "PASS",
+            "details": "No known vulnerable services active",
+            "recommendation": ""
+        }
+    ]
+}

@@ -1,0 +1,2 @@
+ip,timestamp,method,url,status,size
+192.168.1.10,2026-03-25 10:00:04,GET,/?id=1' OR '1'='1,200,400
