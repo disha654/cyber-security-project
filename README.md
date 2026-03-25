@@ -1,215 +1,263 @@
 # Cyber Security Projects Collection
 
-A comprehensive collection of cybersecurity projects focused on threat detection, privacy protection, and security analysis. This repository contains 7 distinct projects, each designed for educational and research purposes.
+A comprehensive collection of cybersecurity projects focused on threat detection, privacy protection, security analysis, and defensive training. This repository contains **15 distinct projects** covering various domains of cyber security.
 
-## 📋 Project Overview
+## 📋 Complete Project List
 
-| # | Project | Technology | Purpose |
-|---|---------|------------|---------|
-| 1 | [Browser Extension to Block Trackers](#1-browser-extension-to-block-trackers) | JavaScript (Manifest V3) | Block web trackers and protect privacy |
-| 2 | [Cyber Threat Intelligence Dashboard](#2-cyber-threat-intelligence-dashboard) | Flask + MongoDB | Aggregate threat intel from multiple sources |
-| 3 | [HoneyPot Server](#3-honeypot-server-to-detect-attack-patterns) | Python + React | Detect and visualize attack patterns |
-| 4 | [Linux Hardening Audit Tool](#4-linux-hardening-audit-tool) | Python | Audit Linux security against CIS Benchmarks |
-| 5 | [Log File Analyzer](#5-log-file-analyzer-for-intrusion-detection) | Python + pandas | Detect intrusion patterns in logs |
-| 6 | [SQL Injection Playground](#6-sql-injection-playground-with-detection-engine) | Flask + SQLite | Learn SQLi detection and prevention |
-| 7 | [Steganography Tool](#7-steganography-tool-for-imagefile-hiding) | Python + customtkinter | Hide/extract data in images |
+| # | Project | Technology | Category |
+|---|---------|------------|----------|
+| 1 | [Browser Extension to Block Trackers](#browser-extension-to-block-trackers) | JavaScript (Manifest V3) | Privacy |
+| 2 | [Cyber Threat Intelligence Dashboard](#cyber-threat-intelligence-dashboard) | Flask + MongoDB | Threat Intelligence |
+| 3 | [Ethical Phishing Simulation Platform](#ethical-phishing-simulation-platform) | Full-stack | Security Awareness |
+| 4 | [HoneyPot Server](#honeypot-server-to-detect-attack-patterns) | Python + React | Attack Detection |
+| 5 | [Keylogger with Encrypted Data Exfiltration](#keylogger-with-encrypted-data-exfiltration) | Python | Defensive PoC |
+| 6 | [Linux Hardening Audit Tool](#linux-hardening-audit-tool) | Python | Security Hardening |
+| 7 | [Log File Analyzer](#log-file-analyzer-for-intrusion-detection) | Python + pandas | Intrusion Detection |
+| 8 | [Network Packet Sniffer](#network-packet-sniffer-with-alert-system) | Python + Web Dashboard | Network Security |
+| 9 | [Password Security Toolkit](#password-security-toolkit) | Next.js + Flask | Authentication |
+| 10 | [Personal Firewall](#personal-firewall) | Python + Scapy | Network Defense |
+| 11 | [Secure Chat App](#secure-chat-app) | Flask-SocketIO + WebCrypto | Secure Communication |
+| 12 | [Secure File Storage System](#secure-file-storage-system-with-aes) | Python + AES-256-GCM | Data Protection |
+| 13 | [SQL Injection Playground](#sql-injection-playground-with-detection-engine) | Flask + SQLite | Web Security |
+| 14 | [Steganography Tool](#steganography-tool-for-imagefile-hiding) | Python + customtkinter | Data Hiding |
+| 15 | [Web Application Vulnerability Scanner](#web-application-vulnerability-scanner) | Python | Security Testing |
 
 ---
 
-## 1. Browser Extension to Block Trackers
+## Projects
+
+### Browser Extension to Block Trackers
 
 A modern, privacy-focused browser extension to block known tracking scripts and provide detailed analytics.
 
-### Features
-- **Block Known Trackers**: Pre-configured list of common tracking domains (Google Analytics, Facebook, DoubleClick, etc.)
-- **Real-time Badge Counter**: Shows the number of trackers blocked on the current page
-- **Analytics Dashboard**: View total blocked requests and a breakdown by domain
-- **Whitelist Support**: Easily allow trackers for specific domains if needed
-- **Privacy First**: All data is stored locally in your browser
+**Features:**
+- Block Known Trackers (Google Analytics, Facebook, DoubleClick, etc.)
+- Real-time Badge Counter showing blocked trackers
+- Analytics Dashboard with request breakdown
+- Whitelist Support for specific domains
+- Privacy First - all data stored locally
 
-### Installation
+**Installation:**
 1. Open Chrome and go to `chrome://extensions/`
-2. Enable **Developer mode** (toggle in the top right corner)
-3. Click on **Load unpacked**
-4. Select the `Browser Extension to Block Trackers` folder
-5. The extension icon should appear in your toolbar
+2. Enable **Developer mode**
+3. Click **Load unpacked** and select the project folder
 
-### Project Structure
-```
-Browser Extension to Block Trackers/
-├── manifest.json          # Extension configuration (Manifest V3)
-├── background.js          # Service worker for tracking
-├── rules.json             # Static blocking rules
-├── dashboard/             # Analytics dashboard UI
-└── popup/                 # Extension popup UI
-```
-
-📖 [View Full README](./Browser%20Extension%20to%20Block%20Trackers/README.md)
+📖 [Full Documentation](./Browser%20Extension%20to%20Block%20Trackers/README.md)
 
 ---
 
-## 2. Cyber Threat Intelligence Dashboard
+### Cyber Threat Intelligence Dashboard
 
 A real-time dashboard to aggregate threat intelligence from VirusTotal and AbuseIPDB.
 
-### Features
-- **Real-time Lookup**: Search IP addresses or domains
-- **Multi-Source Analysis**: Fetches data from VirusTotal and AbuseIPDB
-- **Dashboard**: Visualize lookup metrics and types
-- **History**: Keep track of all past lookups with tagging
-- **Export**: Export history to CSV or JSON
-- **Tagging**: Add custom tags to Indicators of Compromise (IOCs)
+**Features:**
+- Real-time IP and domain lookups
+- Multi-source analysis (VirusTotal, AbuseIPDB)
+- Historical tracking with tagging
+- Export to CSV/JSON
+- Visual dashboard for IOC metrics
 
-### Requirements
-- Python 3.8+
-- MongoDB (Running on `localhost:27017` by default)
-- API Keys for VirusTotal and AbuseIPDB
-
-### Quick Start
+**Quick Start:**
 ```bash
 cd "Cyber Threat Intelligence Dashboard"
 pip install -r requirements.txt
-# Configure .env file with your API keys
 python app.py
 ```
 
-### Project Structure
-```
-Cyber Threat Intelligence Dashboard/
-├── app.py                 # Main Flask application
-├── .env.example           # Environment variables template
-├── requirements.txt
-├── services/
-│   ├── api_client.py      # API integration logic
-│   └── db.py              # MongoDB interaction
-├── templates/             # HTML templates
-└── static/                # CSS/JS assets
-```
-
-📖 [View Full README](./Cyber%20Threat%20Intelligence%20Dashboard/README.md)
+📖 [Full Documentation](./Cyber%20Threat%20Intelligence%20Dashboard/README.md)
 
 ---
 
-## 3. HoneyPot Server to Detect Attack Patterns
+### Ethical Phishing Simulation Platform
 
-A functional honeypot server to simulate vulnerable SSH and FTP services, logging attacker activities and visualizing them on a modern dashboard.
+A full-stack platform for conducting controlled phishing simulations to aid in security awareness training.
 
-### Features
-- **SSH Honeypot (Port 2222)**: Simulates an SSH server, logging login attempts and credentials
-- **FTP Honeypot (Port 2121)**: Simulates an FTP server, logging login attempts
-- **Real-time Dashboard**: Built with React with live attack feed
-- **Geolocation**: Integrates with `ip-api.com` for attacker IP mapping
-- **Dark Mode UI**: Modern, security-focused aesthetic with glassmorphism
+**Features:**
+- Campaign management
+- Custom email templates
+- Real-time tracking of clicks and submissions
+- User engagement analytics
+- Safe, controlled environment for training
 
-### Quick Start
-**Backend:**
+📖 [Full Documentation](./Ethical%20Phishing%20Simulation%20Platform/README.md)
+
+---
+
+### HoneyPot Server to Detect Attack Patterns
+
+A functional honeypot server simulating vulnerable SSH and FTP services with a modern React dashboard.
+
+**Features:**
+- SSH Honeypot (Port 2222) - logs login attempts and credentials
+- FTP Honeypot (Port 2121) - logs login attempts
+- Real-time React dashboard with live attack feed
+- Geolocation mapping via ip-api.com
+- Dark mode UI with glassmorphism design
+
+**Quick Start:**
 ```bash
+# Backend
 cd "HoneyPot Server to Detect Attack Patterns/backend"
 pip install -r requirements.txt
 python main.py
-```
 
-**Frontend:**
-```bash
+# Frontend (separate terminal)
 cd "HoneyPot Server to Detect Attack Patterns/frontend"
 npm install
 npm run dev
 ```
 
-### Project Structure
-```
-HoneyPot Server to Detect Attack Patterns/
-├── backend/
-│   ├── main.py            # Main server entry point
-│   ├── honeypot_ssh.py    # SSH honeypot
-│   ├── honeypot_ftp.py    # FTP honeypot
-│   └── db.py              # Database interaction
-├── frontend/              # React dashboard
-└── simulate_attacks.py    # Attack simulation script
-```
-
-📖 [View Full README](./HoneyPot%20Server%20to%20Detect%20Attack%20Patterns/README.md)
+📖 [Full Documentation](./HoneyPot%20Server%20to%20Detect%20Attack%20Patterns/README.md)
 
 ---
 
-## 4. Linux Hardening Audit Tool
+### Keylogger with Encrypted Data Exfiltration
+
+A safe, synthetic event logger designed for defensive PoC training.
+
+**Features:**
+- Synthetic keyboard event generation
+- Fernet encryption for logged data
+- Simulated exfiltration to localhost-only receiver
+- Demonstrates threat operation patterns
+- Educational tool for defensive security
+
+📖 [Full Documentation](./Keylogger%20with%20Encrypted%20Data%20Exfiltration/README.md)
+
+---
+
+### Linux Hardening Audit Tool
 
 A Python-based utility to audit Linux system security configurations against CIS Benchmarks.
 
-### Features
-- **Filesystem Audit**: Checks permissions of critical files (`/etc/shadow`, `/etc/passwd`)
-- **SSH Hardening**: Verifies secure SSH configurations
-- **Network Security**: Audits kernel parameters (`sysctl`) and firewall status
-- **Service Audit**: Identifies active vulnerable or unnecessary services
-- **Rootkit Detection**: Scans for common rootkit indicators
-- **Compliance Scoring**: Generates a percentage-based score and detailed report
+**Features:**
+- Filesystem audit (permissions on /etc/shadow, /etc/passwd)
+- SSH hardening verification
+- Network security checks (sysctl, firewall)
+- Service audit for vulnerable services
+- Rootkit detection scanning
+- Compliance scoring with recommendations
 
-### Usage
+**Usage:**
 ```bash
 cd "Linux Hardening Audit Tool"
 sudo python3 linux_audit.py
 ```
 
-### Project Structure
-```
-Linux Hardening Audit Tool/
-├── linux_audit.py         # Main audit script
-├── requirements.txt
-└── audit_report.json      # Generated audit report
-```
-
-📖 [View Full README](./Linux%20Hardening%20Audit%20Tool/README.md)
+📖 [Full Documentation](./Linux%20Hardening%20Audit%20Tool/README.md)
 
 ---
 
-## 5. Log File Analyzer for Intrusion Detection
+### Log File Analyzer for Intrusion Detection
 
-A Python-based tool to analyze Apache and SSH logs for suspicious activity, including brute-force attacks, DoS attempts, and vulnerability scanning.
+A Python-based tool to analyze Apache and SSH logs for suspicious activity.
 
-### Features
-- **Log Parsing**: Supports Apache Access Logs and SSH Authentication Logs
-- **Threat Detection**:
-  - **Brute Force**: Detects high frequency of failed SSH logins
-  - **DoS Detection**: Flags IPs with unusually high request rates
-  - **Vulnerability Scanning**: Identifies suspicious path access
-  - **Blacklist Check**: Cross-references IPs against threat intelligence
-- **Reporting**: Exports CSV alerts and generates visualization charts
+**Features:**
+- Log parsing for Apache and SSH
+- Brute force detection (failed SSH logins)
+- DoS detection (high request rates)
+- Vulnerability scanning detection
+- Blacklist cross-referencing
+- CSV alerts and PNG visualizations
 
-### Quick Start
+**Quick Start:**
 ```bash
 cd "Log File Analyzer for Intrusion Detection"
 pip install -r requirements.txt
 python app.py
 ```
 
-### Project Structure
-```
-Log File Analyzer for Intrusion Detection/
-├── app.py                 # Main application
-├── analyzer.py            # Core analysis logic
-├── parser.py              # Log parsing utilities
-├── blacklist.py           # Threat intelligence blacklist
-├── visualizer.py          # Chart generation
-├── logs/                  # Sample log files
-└── reports/               # Generated alerts and charts
-```
-
-📖 [View Full README](./Log%20File%20Analyzer%20for%20Intrusion%20Detection/README.md)
+📖 [Full Documentation](./Log%20File%20Analyzer%20for%20Intrusion%20Detection/README.md)
 
 ---
 
-## 6. SQL Injection Playground with Detection Engine
+### Network Packet Sniffer with Alert System
+
+A real-time network monitoring tool that captures traffic and provides a live web-based dashboard.
+
+**Features:**
+- Real-time packet capture
+- Protocol analysis
+- Live web dashboard for visualization
+- Integrated alert system for suspicious activity
+- Network traffic statistics
+
+📖 [Full Documentation](./Network%20Packet%20Sniffer%20with%20Alert%20System/README.md)
+
+---
+
+### Password Security Toolkit
+
+A Next.js and Flask-based toolkit for password security analysis and testing.
+
+**Features:**
+- Robust password strength analyzer
+- Custom wordlist generator
+- Password auditing capabilities
+- Modern Next.js frontend
+- Flask backend API
+
+📖 [Full Documentation](./Password%20tool/README.md)
+
+---
+
+### Personal Firewall
+
+A lightweight Python-based firewall using Scapy for packet inspection.
+
+**Features:**
+- JSON-based rule definitions
+- Block/allow traffic by IP, port, protocol
+- CLI interface
+- Tkinter GUI
+- Real-time packet inspection with Scapy
+
+📖 [Full Documentation](./Personal%20Firewall/README.md)
+
+---
+
+### Secure Chat App
+
+An end-to-end encrypted (E2EE) messaging application.
+
+**Features:**
+- RSA key exchange
+- AES message encryption
+- Real-time messaging with Flask-SocketIO
+- WebCrypto API integration
+- Only participants can read conversations
+
+📖 [Full Documentation](./Secure%20Chat%20App/README.md)
+
+---
+
+### Secure File Storage System with AES
+
+A local file encryption utility using AES-256-GCM.
+
+**Features:**
+- AES-256-GCM encryption
+- Password-based key derivation (scrypt)
+- Metadata protection
+- Integrity verification
+- Confidential file storage
+
+📖 [Full Documentation](./Secure%20File%20Storage%20System%20with%20AES/README.md)
+
+---
+
+### SQL Injection Playground with Detection Engine
 
 An educational platform for understanding, detecting, and preventing SQL Injection attacks.
 
-### Features
-- **Real-Time Detection Engine (WAF-like)**: Monitors requests and identifies SQLi patterns
-- **Interactive Playground**: Explore vulnerable endpoints for Search and Login
-- **Live Security Dashboard**: View detected attacks with severity levels
-- **Parameterized Protection**: Demonstrate prepared statements
-- **Attacker Suite**: Simulate multiple SQLi attack types (Boolean, Union, Error-based)
+**Features:**
+- Real-time WAF-like detection engine
+- Interactive vulnerable endpoints
+- Live security dashboard
+- Parameterized protection examples
+- Attacker suite for simulation (Boolean, Union, Error-based)
 
-### Quick Start
+**Quick Start:**
 ```bash
 cd "SQL Injection Playground with Detection Engine"
 pip install -r requirements.txt
@@ -219,68 +267,106 @@ python app.py
 python attacker.py
 ```
 
-### Project Structure
-```
-SQL Injection Playground with Detection Engine/
-├── app.py                 # Flask application
-├── attacker.py            # Attack simulation script
-├── detector.py            # SQLi detection engine
-├── init_db.py             # Database initialization
-└── logs/                  # Detection logs
-```
-
-📖 [View Full README](./SQL%20Injection%20Playground%20with%20Detection%20Engine/README.md)
+📖 [Full Documentation](./SQL%20Injection%20Playground%20with%20Detection%20Engine/README.md)
 
 ---
 
-## 7. Steganography Tool for Image/File Hiding
+### Steganography Tool for Image/File Hiding
 
-A modern GUI tool to hide and extract text or files within images using Least Significant Bit (LSB) steganography.
+A modern GUI tool to hide and extract text or files within images using LSB steganography.
 
-### Features
-- **Modern UI**: Built with `customtkinter` for a sleek, dark-themed interface
-- **Drag-and-Drop**: Easily drop images to encode or decode
-- **LSB Encoding**: Uses the `stepic` library to embed data invisibly
-- **Format Support**: Supports PNG and BMP (PNG recommended)
+**Features:**
+- Modern dark-themed UI with customtkinter
+- Drag-and-drop image support
+- LSB encoding using stepic library
+- PNG and BMP format support
+- Invisible data embedding
 
-### Quick Start
+**Quick Start:**
 ```bash
 cd "Steganography Tool for Image/File Hiding"
 pip install -r requirements.txt
 python app.py
 ```
 
-### Project Structure
-```
-Steganography Tool for Image/File Hiding/
-├── app.py                 # Main GUI application
-├── stego_engine.py        # Core LSB steganography logic
-└── requirements.txt
-```
-
-📖 [View Full README](./Steganography%20Tool%20for%20ImageFile%20Hiding/README.md)
+📖 [Full Documentation](./Steganography%20Tool%20for%20ImageFile%20Hiding/README.md)
 
 ---
 
-## 🛡️ Security Disclaimer
+### Web Application Vulnerability Scanner
 
-These projects are designed for **educational and research purposes only**. 
+A DAST (Dynamic Application Security Testing) tool for identifying web application vulnerabilities.
 
+**Features:**
+- Web application crawling
+- XSS vulnerability detection
+- SQL Injection detection (error-based)
+- Missing CSRF protection identification
+- Automated security testing
+
+📖 [Full Documentation](./Web%20Application%20Vulnerability%20Scanner/README.md)
+
+---
+
+## 🛠️ General Setup
+
+Most projects in this collection are Python-based. To get started:
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/disha654/cyber-security-project.git
+   cd cyber-security-project
+   ```
+
+2. **Navigate to a specific project:**
+   ```bash
+   cd "Project Name"
+   ```
+
+3. **Install dependencies:**
+   Use a virtual environment:
+   ```bash
+   python -m venv venv
+   # Windows:
+   venv\Scripts\activate
+   # Linux/Mac:
+   source venv/bin/activate
+   pip install -r requirements.txt
+   ```
+
+4. **Run the project:**
+   Follow specific instructions in each project's README.
+
+---
+
+## ⚖️ Ethical Use & Disclaimer
+
+These tools are provided for **educational and ethical security testing purposes only**.
+
+- **Do not** use these tools against any system or network without explicit, written authorization
+- The authors and contributors are not responsible for any misuse or damage caused by these programs
+- Always follow local laws and regulations regarding cyber security testing
 - **Do not deploy** vulnerable projects (SQL Injection Playground, HoneyPot) in production environments
 - Always test security tools in **controlled environments**
 - Ensure you have **proper authorization** before testing on any system you don't own
 - The HoneyPot should be run in an **isolated network** to prevent potential abuse
 
+---
+
 ## 📚 Learning Objectives
 
 This collection covers key cybersecurity domains:
 
-- **Privacy Protection**: Browser extension for tracker blocking
-- **Threat Intelligence**: CTI dashboard for IOC analysis
-- **Attack Detection**: Honeypot and log analysis tools
-- **Security Hardening**: Linux audit tool for compliance
-- **Web Security**: SQL injection understanding and prevention
-- **Data Protection**: Steganography for covert communication
+- **Privacy Protection**: Browser extension, Steganography
+- **Threat Intelligence**: CTI Dashboard, Log Analyzer
+- **Attack Detection**: Honeypot, Network Sniffer, Vulnerability Scanner
+- **Security Hardening**: Linux audit, Personal Firewall
+- **Web Security**: SQL Injection Playground
+- **Secure Communication**: E2EE Chat, File Encryption
+- **Security Awareness**: Phishing Simulation
+- **Defensive Training**: Keylogger PoC
+
+---
 
 ## 🤝 Contributing
 
@@ -290,9 +376,13 @@ Contributions are welcome! Feel free to:
 - Improve documentation
 - Add new security projects
 
+---
+
 ## 📄 License
 
 This project collection is for educational purposes. Individual projects may have their own licensing terms - please refer to each project's documentation.
+
+---
 
 ## 👤 Author
 
