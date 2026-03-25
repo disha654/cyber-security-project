@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Chat Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <main class="secure-shell">
+        <section class="card login-card">
+            <p class="kicker">Encrypted Workspace</p>
+            <h1>Secure Chat Access</h1>
+            <p class="subtext">Authenticate your identity to initialize end-to-end encrypted messaging.</p>
+
+            <label for="username">Username</label>
+            <input id="username" type="text" placeholder="Enter your username" autocomplete="off">
+
+            <button id="enterBtn" type="button">Enter Secure Channel</button>
+            <p class="danger-note" id="errorText" hidden>Username is required.</p>
+        </section>
+    </main>
+
+    <script>
+        document.getElementById("enterBtn").addEventListener("click", function () {
+            const username = document.getElementById("username").value.trim();
+            const errorText = document.getElementById("errorText");
+
+            if (!username) {
+                errorText.hidden = false;
+                return;
+            }
+
+            localStorage.setItem("username", username);
+            window.location.href = "/chat";
+        });
+    </script>
+</body>
+</html>

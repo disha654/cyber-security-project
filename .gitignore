@@ -1,0 +1,45 @@
+# Environments
+.venv/
+venv/
+env/
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Build outputs
+dist/
+build/
+.next/
+out/
+.tmp/
+
+# Cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.ipynb_checkpoints/
+.eslintcache
+.stylelintcache
+.npm/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Project specific
+node_modules/
+sniffer.db
+phishing.db
+logs/
+reports/
+restored/
+.secure_storage/
+secret.key
+*.enc
+*.log

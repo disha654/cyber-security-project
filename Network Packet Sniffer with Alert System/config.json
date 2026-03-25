@@ -1,0 +1,15 @@
+{
+    "db_path": "sniffer.db",
+    "alert_log": "alerts.log",
+    "port_scan_threshold": 10,
+    "flood_threshold": 100,
+    "time_window": 60,
+    "email_alerts": {
+        "enabled": false,
+        "smtp_server": "smtp.gmail.com",
+        "smtp_port": 587,
+        "sender_email": "your_email@gmail.com",
+        "receiver_email": "receiver_email@gmail.com",
+        "password": "your_password"
+    }
+}

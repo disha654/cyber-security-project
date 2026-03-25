@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Chat Console</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <main class="messenger-shell">
+        <aside class="sidebar">
+            <div class="sidebar-top">
+                <div class="avatar" id="meAvatar">U</div>
+                <div>
+                    <p class="eyebrow">Secure Profile</p>
+                    <h2 id="userBadge">Unknown</h2>
+                </div>
+            </div>
+
+            <div class="search-wrap">
+                <input type="text" id="receiver" placeholder="Search or start new chat" autocomplete="off">
+            </div>
+
+            <div class="chat-list">
+                <div class="chat-item active">
+                    <div class="avatar small" id="peerAvatar">R</div>
+                    <div>
+                        <p class="chat-name" id="activeChatName">Secure Contact</p>
+                        <p class="chat-preview">Encrypted channel is active</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <section class="conversation">
+            <header class="conversation-top">
+                <div class="avatar small" id="headAvatar">R</div>
+                <div>
+                    <p class="chat-name" id="headerName">Secure Contact</p>
+                    <p class="status-line">online | end-to-end encrypted</p>
+                </div>
+            </header>
+
+            <section class="chat-canvas" id="messageFeed">
+                <div class="message-row incoming">
+                    <div class="bubble">
+                        <p>Welcome to your secure channel.</p>
+                        <span class="meta">System</span>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="composer">
+                <textarea id="message" rows="1" placeholder="Type a message"></textarea>
+                <button id="sendBtn" type="button">Send</button>
+            </footer>
+        </section>
+    </main>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="{{ url_for('static', filename='js/crypto.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+</body>
+</html>

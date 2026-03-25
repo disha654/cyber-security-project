@@ -1,0 +1,20 @@
+{
+  "name": "password-tool-web",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"next dev\" \".\\venv\\Scripts\\python.exe api/index.py\"",
+    "dev:next": "next dev",
+    "dev:api": ".\\venv\\Scripts\\python.exe api/index.py",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "concurrently": "^9.2.1",
+    "next": "14.2.33",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  }
+}
