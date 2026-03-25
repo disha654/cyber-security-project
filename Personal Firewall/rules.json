@@ -1,0 +1,72 @@
+{
+  "default_action": "allow",
+  "rules": [
+    {
+      "name": "block-known-malicious-ip",
+      "action": "block",
+      "direction": "any",
+      "src_ip": "203.0.113.10",
+      "dst_ip": null,
+      "protocol": null,
+      "src_port": null,
+      "dst_port": null,
+      "enabled": true,
+      "description": "Example rule that blocks a suspicious IP.",
+      "metadata": {
+        "severity": "high"
+      }
+    },
+    {
+      "name": "block-telnet",
+      "action": "block",
+      "direction": "outbound",
+      "src_ip": null,
+      "dst_ip": null,
+      "protocol": "tcp",
+      "src_port": null,
+      "dst_port": 23,
+      "enabled": true,
+      "description": "Prevents insecure outbound Telnet traffic.",
+      "metadata": {}
+    },
+    {
+      "name": "allow-dns",
+      "action": "allow",
+      "direction": "outbound",
+      "src_ip": null,
+      "dst_ip": null,
+      "protocol": "udp",
+      "src_port": null,
+      "dst_port": 53,
+      "enabled": true,
+      "description": "Allows DNS lookups.",
+      "metadata": {}
+    },
+    {
+      "name": "block-ssh",
+      "action": "block",
+      "direction": "inbound",
+      "src_ip": null,
+      "dst_ip": null,
+      "protocol": "tcp",
+      "src_port": null,
+      "dst_port": 22,
+      "enabled": true,
+      "description": "",
+      "metadata": {}
+    },
+    {
+      "name": "block-http",
+      "action": "block",
+      "direction": "outbound",
+      "src_ip": null,
+      "dst_ip": null,
+      "protocol": "tcp",
+      "src_port": null,
+      "dst_port": 80,
+      "enabled": true,
+      "description": "",
+      "metadata": {}
+    }
+  ]
+}
